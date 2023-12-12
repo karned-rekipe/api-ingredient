@@ -1,0 +1,6 @@
+.idea
+.pytest_cache
+venv
+tests/.pytest_cache
+.vscode
+__pycache__
