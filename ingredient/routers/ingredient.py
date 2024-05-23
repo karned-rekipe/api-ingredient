@@ -9,11 +9,11 @@ from ingredient.schemas.ingredient import (SchemaIngredientCreate, SchemaIngredi
                                    SchemaIngredientUpdate, ModelIngredientComputeFields)
 from ingredient.functions.ingredient import *
 
-security = HTTPBearer()
+#security = HTTPBearer()
 
 router = APIRouter(
     responses = responses_default,
-    dependencies=[Depends(security)]
+    #dependencies=[Depends(security)]
 )
 
 

@@ -32,11 +32,11 @@ app = FastAPI(
     openapi_url = '/v' + api_v + '/' + api + '/openapi.json',
     docs_url = '/v' + api_v + '/' + api + '/docs',
     redoc_url = None,
-    terms_of_service = "https://api.pebble.solutions/terms.html",
+    terms_of_service = "https://api.koden.bzh/terms.html",
     contact = {
-        "name": "Pebble",
-        "url": "https://www.pebble.solutions",
-        "email": "support@pebble.solutions",
+        "name": "Koden",
+        "url": "https://www.koden.bzh",
+        "email": "support@koden.bzh",
     },
     openapi_tags = [
         {
@@ -44,7 +44,7 @@ app = FastAPI(
             'description': "paths for ingredient",
             "externalDocs": {
                 "description": "External docs",
-                "url": "https://www.pebble.solutions",
+                "url": "https://www.koden.bzh",
             }
         },
         {
@@ -52,7 +52,7 @@ app = FastAPI(
             'description': "paths for devops",
             "externalDocs": {
                 "description": "External docs",
-                "url": "https://www.pebble.solutions",
+                "url": "https://www.koden.bzh",
             }
         }
     ])
