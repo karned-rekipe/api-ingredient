@@ -15,4 +15,8 @@ gcloud run deploy ingredient \
  && gcloud run services update-traffic ingredient --to-latest
 ```
 
-Cette solution est transitoire. 
+# En local
+```
+sudo docker build -t rekipe-api-ingredient .
+sudo docker run -d --name rekipe-api-ingredient -p 1234:8000 rekipe-api-ingredient
+```
