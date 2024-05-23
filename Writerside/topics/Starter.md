@@ -13,3 +13,5 @@ A la racine du projet se trouve un Dockerfile qui permet de lancer l'API en loca
 docker build -t rekipe-api-ingredient .
 docker run -d --name rekipe-api-ingredient -p 8001:8001 rekipe-api-ingredient
 ```
+
+Se rendre sur son naviguateur à l'adresse [http://localhost:8001/ingredient/docs](http://localhost:8001/ingredient/docs) pour voir la documentation de l'API.
