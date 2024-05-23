@@ -14,7 +14,7 @@ from ingredient.routers import ingredient, devops
 ic.configureOutput(prefix = 'ic| -> ')
 
 logging.basicConfig(level = logging.DEBUG)
-logging.info('Start /v' + api_v + '/' + api)
+logging.info('Start /' + api)
 
 
 @asynccontextmanager
@@ -29,8 +29,8 @@ app = FastAPI(
     title = "/ingredient",
     description = "API to manage ingredients.",
     version = "1.0.1",
-    openapi_url = '/v' + api_v + '/' + api + '/openapi.json',
-    docs_url = '/v' + api_v + '/' + api + '/docs',
+    openapi_url = '/' + api + '/openapi.json',
+    docs_url = '/' + api + '/docs',
     redoc_url = None,
     terms_of_service = "https://api.koden.bzh/terms.html",
     contact = {
@@ -67,8 +67,8 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
-app.include_router(ingredient.router, tags = ["ingredient"], prefix = "/v" + api_v + "/" + api)
-app.include_router(devops.router, tags = ["devops"], prefix = "/v" + api_v + "/" + api)
+app.include_router(ingredient.router, tags = ["ingredient"], prefix = "/" + api)
+app.include_router(devops.router, tags = ["devops"], prefix = "/" + api)
 
 if __name__ == "__main__" and os.environ.get("ENVIRONMENT") != "PRODUCTION":
     uvicorn.run(app, host = "127.0.0.1", port = 3000)

@@ -6,7 +6,7 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
-ENV PORT 1234
+ENV PORT 8001
 
 RUN pip install --no-cache-dir -r requirements.txt
 

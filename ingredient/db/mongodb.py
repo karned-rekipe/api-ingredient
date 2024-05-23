@@ -14,20 +14,11 @@ class Mongodb:
     db: Database = None
 
     def connect_to_database(self):
-        uri = ("mongodb+srv://" + mongo_instance_name + "." + mongo_instance_code + ".mongodb.net/?"
-                                                                                    "authSource=%24external"
-                                                                                    "&authMechanism=MONGODB-X509"
-                                                                                    "&retryWrites=true"
-                                                                                    "&w=majority")
-
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        pem_path = os.path.join(current_dir, '../../env', 'ingredient.pem')
+        # Local MongoDB URL, default port for MongoDB is 27017
+        uri = "mongodb://172.17.0.2:27017/"
 
         logging.info("Connecting to MongoDB.")
-        self.client = MongoClient(uri,
-                                  tls = True,
-                                  tlsCertificateKeyFile = pem_path,
-                                  server_api = ServerApi('1'))
+        self.client = MongoClient(uri)
         self.db = self.client[mongo_database]
         logging.info("Connected to MongoDB.")
 
